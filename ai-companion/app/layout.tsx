@@ -17,6 +17,9 @@ import {
   UserButton
 } from '@clerk/nextjs'
 import './globals.css'
+
+import { cn } from "@/lib/utils";
+
 export default function RootLayout({
   children,
 }: {
@@ -25,7 +28,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={inter.className}>
+        <body className={cn("bg-secondary", inter.className)}>
           <SignedOut>
             <SignInButton />
           </SignedOut>
